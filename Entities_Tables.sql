@@ -29,7 +29,7 @@ CREATE TABLE Product
 	Price decimal NOT NULL, 
 	Prod_Weight int NOT NULL, 
 	Unit varchar(10) CHECK(Unit in ('gram', 'mL')), 
-	Quantity int NOT NULL DEFAULT 0, 
+	Stock int NOT NULL DEFAULT 0, 
 	SubcatID int NOT NULL FOREIGN KEY REFERENCES SubCategories(SubcatID), 
 	DiscountPrice decimal DEFAULT 0, 
 	DiscountOnQty int DEFAULT 0, 
