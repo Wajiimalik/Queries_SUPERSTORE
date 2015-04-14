@@ -98,3 +98,12 @@ CREATE TABLE Favourites
 	ProductID int NOT NULL,
 	CONSTRAINT pk_Favourite PRIMARY KEY (ProductID, CustID)
 )
+
+ALTER TABLE Users
+ALTER COLUMN Street varchar(30);
+
+ALTER TABLE Users
+ALTER COLUMN HouseNo varchar(30);
+
+ALTER TABLE Users
+ALTER COLUMN PhoneNo varchar(15);
