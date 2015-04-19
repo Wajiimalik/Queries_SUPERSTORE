@@ -33,6 +33,9 @@ INSERT INTO Product (Name, BrandID, Prod_Desc, Price, Prod_Weight, Unit, Stock, 
 VALUES ('Cold Coffee', 3, 'Chilled cold coffee, first time in pack in Pakistan', 35, 150, 'mL', 50, 23)
 
 
+INSERT INTO Product (Name, BrandID, Prod_Desc, Price, Prod_Weight, Unit, Stock, SubcatID) 
+VALUES ('Double Chocolate Ice-Cream', 3, 'xyz', 100, 250, 'gram', 50, 10)
+
 
 --SHOPPING HISTORY
 INSERT INTO Shopping_History (Total, ShopDate, DeliveryDate, DeliveryTime)
