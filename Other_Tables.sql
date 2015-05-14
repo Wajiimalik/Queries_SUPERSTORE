@@ -107,3 +107,7 @@ ALTER COLUMN HouseNo varchar(30);
 
 ALTER TABLE Users
 ALTER COLUMN PhoneNo varchar(15);
+
+
+ALTER TABLE Basket
+ADD HistoryID int FOREIGN KEY REFERENCES Shopping_History(HistoryID);

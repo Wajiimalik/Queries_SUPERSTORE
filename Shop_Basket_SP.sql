@@ -30,16 +30,12 @@ BEGIN
     -- Insert statements for procedure here
 	
 	INSERT INTO Shopping_History (Total, ShopDate, DeliveryDate, DeliveryTime)
-	VALUES ( (SELECT SUM(T_Price) FROM Basket WHERE CustID = @custID), GETDATE(), GETDATE(), GETDATE());
+	VALUES ( (SELECT SUM(T_Price) FROM Basket WHERE CustID = @custID AND HistoryID is NULL), GETDATE(), GETDATE(), GETDATE());
+	
 
-	INSERT INTO Shopped_Product(HistoryID, CustID, ProductID, Quantity, T_Price) 
-	VALUES ( (SELECT MAX(HistoryID) FROM Shopping_History),  
-		     @custID,
-			 ( SELECT ProductID FROM Basket WHERE CustID = @custID ) 
-			 ( SELECT Quantity FROM Basket WHERE CustID = @custID AND ProductID = p),
-
-			 
-    )
+	Update Basket 
+	SET HistoryID = (SELECT MAX(HistoryID) FROM Shopping_History)
+	WHERE CustID = @custID AND HistoryID is NULL
 
 END
 GO
